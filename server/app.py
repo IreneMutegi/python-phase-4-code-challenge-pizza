@@ -53,7 +53,7 @@ class RestaurantPizzas(Resource):
     def post(self):
         data = request.get_json()
 
-        # Validate price
+        
         price = data.get("price")
         if price is None or not (1 <= price <= 30):
             return jsonify(errors=["Price must be between 1 and 30"]), 400
